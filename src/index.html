@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Better Doctor</title>
-  </head>
-  <body>
-  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+</head>
+<body>
+<h3>BetterDoctor - Doctor Search Results</h3>
+<div id="content-placeholder"></div>
+<script id="docs-template" type="text/x-handlebars-template">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Picture</th>
+        </thead>
+        <tbody>
+        {{#data}}
+        <tr>
+            <td><a href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
+              <img src="{{ratings.0.image_url_small}}"></img></td>
+            <td>{{profile.title}}</td>
+            <td><img src="{{profile.image_url}}"></img></td>
+        </tr>
+        {{/data}}
+        </tbody>
+    </table>
+</script>
+</body>
 </html>

@@ -28,5 +28,4 @@ describe('Search', function () {
     expect(nameMatch).toEqual('there are no match for this search in your area');
   });
 
-
 });
