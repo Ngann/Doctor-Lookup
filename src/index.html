@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -9,50 +9,78 @@
 </head>
 <body>
   <div class="container">
-    <h3>Find a doctor near you!</h3>
-    <div class="main">
-    <div class="container h-100">
-      <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="Search...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+    <div class="search">
+      <form class="form-horizontal findDoctors">
+        <fieldset>
+          <!-- Form Name -->
+          <legend>Search for Doctors in Your Area</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="provider">Provider</label>
+            <div class="col-md-4">
+              <input id="provider" name="provider" type="text" placeholder="Enter Provider" class="form-control input-md">
+            </div>
+          </div>
+
+          <!-- Select Basic Practice-->
+          <!-- <div class="form-group">
+            <label class="col-md-4 control-label" for="property_type">Practice</label>
+            <div class="col-md-4">
+              <select id="property_type" name="property_type" class="form-control">
+                <option value="1">Option one</option>
+                <option value="2">Option two</option>
+              </select>
+            </div>
+          </div> -->
+
+          <!-- Select Basic Symptoms -->
+          <!-- <div class="form-group">
+            <label class="col-md-4 control-label" for="price_min">Symptoms</label>
+            <div class="col-md-2">
+              <select id="price_min" name="price_min" class="form-control">
+                <option value="1">Option one</option>
+                <option value="2">Option two</option>
+              </select>
+            </div>
+          </div> -->
+
+          <!-- Select Basic -->
+          <!-- <div class="form-group">
+          <label class="col-md-4 control-label" for="selectbasic"></label>
+          <div class="col-md-2">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div> -->
+
+    <!-- Button -->
+        <div class="form-group findDoctors">
+          <label class="col-md-4 control-label" for="submit"></label>
+          <div class="col-md-4">
+            <button id="submit" name="submit" class="btn btn-primary">Search</button>
+          </div>
         </div>
+      </fieldset>
+    </form>
+    </div>
+    <div class="result">
+      <div class="docs">
+        <h3>Result</h3>
+        <div id="content-placeholder"></div>
+        <div class=".showErrors"></div>
+      </div>
+      <div class="conditions">
+        <h3>Conditions</h3>
+        <div id="content-placeholder"></div>
+        <div class=".showErrorsCondition"></div>
       </div>
     </div>
+    <div class="doctor-profile">
+      <h3>Doctor Profile</h3>
+    </div>
   </div>
-
-
-
-
-
-<div class="docs">
-  <div id="content-placeholder"></div>
-  <div class=".showErrors">
-</div>
-
-<div class="conditions">
-  <div id="content-placeholder"></div>
-  <div class=".showErrorsCondition">
-</div>
-</div>
-<!-- <script id="docs-template" type="text/x-handlebars-template">
-    <table>
-        <thead>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Picture</th>
-        </thead>
-        <tbody>
-        {{#data}}
-        <tr>
-            <td><a href="{{attribution_url}}" target="_new">{{profile.first_name}} {{profile.last_name}}</a><br>
-              <img src="{{ratings.0.image_url_small}}"></img></td>
-            <td>{{profile.title}}</td>
-            <td><img src="{{profile.image_url}}"></img></td>
-        </tr>
-        {{/data}}
-        </tbody>
-    </table>
-</script> -->
 </body>
 </html>
