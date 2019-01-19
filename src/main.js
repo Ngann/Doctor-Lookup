@@ -11,15 +11,18 @@ $(document).ready(function() {
   console.log(lon);
   console.log(lat);
 
-  let doctorResults = new Search();
-  let promise = doctorResults.searchDoctors(lon,lat);
+  // let doctorResults = new Search();
+  // let promise = doctorResults.searchDoctors(lon,lat);
+  //
+  // promise.then(function(response){
+  //   let body = JSON.parse(response);
+  //   $('.docs').text(`API call went through, now we need to get the data ${body.data}`);
+  // }, function(error){
+  //   $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  // });
 
-  promise.then(function(response){
-    let body = JSON.parse(response);
-    $('.docs').text(`API call went through, now we need to get the data ${body}`);
-  }, function(error){
-    $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-  });
+
+  //delete when done:
   // var api_key = process.env.API_KEY;
   // var resource_url = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lon},${lat},100&skip=2&limit=10&user_key=${api_key}`;
   //
