@@ -11,44 +11,28 @@ $(document).ready(function() {
     event.preventDefault();
     let providerInput = $('#provider').val();
     $('#provider').val("");
-    console.log(providerInput)
+    // console.log(providerInput)
 
-    var lon = 45.5423657;
-    var lat = -122.9345683;
+    var lon = 45.54;
+    var lat = -122.93;
     let doctorResults = new Search();
     let promiseDoctor = doctorResults.searchDoctors(lon,lat);
 
     promiseDoctor.then(function(response){
       let body = JSON.parse(response);
       let x = [];
-      var i = 0;
-      var j =0;
       let y = [];
-
+      let z = [];
+      var i = 0;
       var newHTML = [];
-      // for(i in body.data) {
-      //   for (j in body.data[i].profile){
-      //     x = body.data[i].profile.first_name;
-      //     newHTML.push('<li>' + x + '</li>');
-      //   }
-      // }
-
-      for(i in body.data) {
+      for( i in body.data) {
           x = body.data[i].profile.first_name;
           y = body.data[i].profile.last_name;
-          newHTML.push('<li>' + x + " " + y + '</li>');
+          z = body.data[i].insurances[0].insurance_plan.name;
+          newHTML.push('<li>'+ x + " " + y + " " + z +'</li>');
         }
-
-
-
       $(".result").html(newHTML.join(""));
 
-      // for(i in body.data) {
-      //   for (j in body.data[i].specialties){
-      //     x = body.data[i].specialties[j].name;
-      //     console.log(x);
-      //   }
-      // }
     }, function(error){
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
