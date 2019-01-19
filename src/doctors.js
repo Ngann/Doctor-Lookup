@@ -6,9 +6,9 @@ export class Search {
       // let location="37.773,-122.413"
 
       let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=${lon},${lat},100&skip=2&limit=10&user_key=${key}`;
-      request.onload = function(data) {
+      request.onload = function() {
         if (this.status === 200) {
-          resolve(this.response)
+          resolve(this.response);
         } else {
           reject(Error(request.statusText));
         }

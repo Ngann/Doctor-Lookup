@@ -11,15 +11,41 @@ $(document).ready(function() {
   console.log(lon);
   console.log(lat);
 
-  // let doctorResults = new Search();
-  // let promise = doctorResults.searchDoctors(lon,lat);
-  //
-  // promise.then(function(response){
-  //   let body = JSON.parse(response);
-  //   $('.docs').text(`API call went through, now we need to get the data ${body.data}`);
-  // }, function(error){
-  //   $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-  // });
+  let doctorResults = new Search();
+  let promise = doctorResults.searchDoctors(lon,lat);
+
+  promise.then(function(response){
+    let body = JSON.parse(response);
+    let x = body.data[0];
+    var i = 0;
+    var j =0;
+    var k = 0;
+    // for(i in body.data) {
+    //   x = body.data[i];
+    //   console.log(x);
+    // }
+
+    for(i in body.data) {
+      for (j in body.data[i].profile){
+        x = body.data[i].profile[j];
+        console.log(x);
+      }
+    }
+
+    // for(i in body.data) {
+    //   for (j in body.data[i].profile){
+    //     for (k in body.data[i].profile[j].bio){
+    //       x = body.data[i].profile[j].bio[k];
+    //       console.log(x);
+    //     }
+    //   }
+    // }
+
+
+    $('.docs').text(`API call went through, now we need to get the data ${body.data}`);
+  }, function(error){
+    $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  });
 
 
   //delete when done:
