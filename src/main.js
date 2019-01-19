@@ -24,14 +24,14 @@ $(document).ready(function() {
       let y = [];
       let z = [];
       var i = 0;
-      var newHTML = [];
+      var nameHTML = [];
       for( i in body.data) {
           x = body.data[i].profile.first_name;
           y = body.data[i].profile.last_name;
           z = body.data[i].insurances[0].insurance_plan.name;
-          newHTML.push('<li>'+ x + " " + y + " " + z +'</li>');
+          nameHTML.push('<h4>'+ x + " " + y +'</h4>'+ '<br>' + '<p>' + z + '</p>');
         }
-      $(".result").html(newHTML.join(""));
+      $(".result").html(nameHTML.join(""));
 
     }, function(error){
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
