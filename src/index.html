@@ -17,6 +17,15 @@
 
           <!-- Text input-->
           <div class="form-group">
+            <label class="col-md-4 control-label" for="condition">Select Condition</label>
+            <div class="col-md-4">
+              <select id="condition" name="condition" class="form-control input-md">
+
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
             <label class="col-md-4 control-label" for="provider">Provider</label>
             <div class="col-md-4">
               <input id="provider" name="provider" type="text" placeholder="Enter Provider" class="form-control input-md">
@@ -32,29 +41,22 @@
       </fieldset>
     </form>
     </div>
+
     <div class="result">
       <div class="docs">
         <h3>Results</h3>
         <ul id="doctor-list">
 
         </ul>
-        <div id="content-placeholder"></div>
         <div class=".showErrors"></div>
       </div>
-      <div id="conditions">
-        <ul id="conditions-list">
-
-        </ul>
-        <h3>Conditions</h3>
-        <div id="content-placeholder"></div>
-        <div class=".showErrorsCondition"></div>
-      </div>
-
 
       <div class="profile">
         <div class="row">
           <div class="col-md-6">
             <div id="doctor-profile">
+            </div>
+            <div id="doctor-address">
             </div>
           </div>
           <div class="col-md-6" id="doctor-image">
@@ -62,9 +64,7 @@
           </div>
         </div>
       </div>
-      <div id="id_of_div">
 
-      </div>
     </div>
   </div>
 </body>
