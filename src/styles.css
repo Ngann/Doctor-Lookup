@@ -15,3 +15,7 @@ body {
 #doctor-img {
 
 }
+
+li {
+  list-style-type: none;
+}
