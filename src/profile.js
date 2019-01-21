@@ -1,30 +1,15 @@
-export function profile(el) {
-    var container = document.createElement("div");
-    container.id = "profileid";
-    container.className = "profile";
-    var i = 0;
-    var k = 0;
-    var j = 0;
-    for (i=0; i<9; i+=1) {
-        var row = document.createElement("h3");
-        h3.className = "doc-title";
-        h3.id = "doctor" + i;
+export function profile() {
 
-        for (k=0; k<9; k+=1) {
-            var box = document.createElement("div");
-            box.className = "box";
-            row.appendChild(box);
+  promiseDoctor.then(function(response){
+  let body = JSON.parse(response);
+  // let city = []
+  // var addressHTML = [];
+  var m = 0;
+  let array = body.data[i].practices[0].visit_address;
 
-            for(j=0; j<1; j+=1){
-              var input = document.createElement("input");
-              input.className = "input";
-              input.type = "number";
-              input.min = "1"
-              input.max = "9"
-              box.appendChild(input);
-            }
-        }
-        container.appendChild(row);
-    }
-    el.appendChild(container);
-}
+  for (m in array){
+    document.getElementById("id_of_div").innerHTML += (m+1) + ": " + array[m];
+  }, function(error){
+    $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  };
+});
