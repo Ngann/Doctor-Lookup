@@ -20,20 +20,34 @@ $(document).ready(function() {
 
     promiseDoctor.then(function(response){
       let body = JSON.parse(response);
-      let x = [];
-      let y = [];
+      let firstName = [];
+      let lastName = [];
+      let bio =[];
+      let image =[];
+      let title =[];
+      let phoneNumber = [];
       let z = [];
       var i = 0;
       var nameHTML = [];
+      var addressHTML = [];
+      var imageHTML = [];
       for( i in body.data) {
-          x = body.data[i].profile.first_name;
-          y = body.data[i].profile.last_name;
+          firstName = body.data[i].profile.first_name;
+          lastName = body.data[i].profile.last_name;
+          title = body.data[i].profile.title;
+          bio = body.data[i].profile.bio;
+          image = body.data[i].profile.image_url;
+          // address =body.data[i].visit_address.city;
+          // phoneNumber =body.data[i].phones[0].number;
+          // website = body.data[i].practices[0].website;
+          // newPatient =
           z = body.data[i].insurances[0].insurance_plan.name;
-          nameHTML.push('<li id="'+ x + '">'+ x + " " + y +'</li>');
-          // nameHTML.push('<h4>'+ x + " " + y +'</h4>'+ '<br>' + '<p>' + z + '</p>');
+          nameHTML.push('<li id="'+ i + '">'+ firstName + " " + lastName +'</li>');
+          addressHTML.push('<h4>'+ firstName + " " + lastName + " " + title + '</h4>'+ '<br>' + '<p>' + bio + '</p>'+ '<br>' + '<p>' + z + '</p>');
+          imageHTML.push('<img src="' + image + '" >');
         }
       // $(".doctor-list").html(nameHTML.join(""));
-      $("#doctor-list").html(nameHTML.join(""));
+      $("#doctor-list").html(nameHTML);
 
       var lis = document.getElementById("doctor-list").getElementsByTagName('li');
       for (var a = 0; a < lis.length; a++){
@@ -41,8 +55,14 @@ $(document).ready(function() {
       }
 
       function doStuff(){
-        var a = this.innerHTML
-        $("#doctor-profile").text(this.innerHTML);
+        var a = this.id;
+        var b = imageHTML[a];
+        var c = addressHTML[a];
+        // console.log(nameHTML[a]);
+        // console.log(addressHTML[a]);
+
+        $("#doctor-profile").html(c);
+        $("#doctor-image").html(b);
       }
 
     }, function(error){
