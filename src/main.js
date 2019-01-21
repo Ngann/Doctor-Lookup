@@ -8,26 +8,26 @@ import { Conditions } from './../src/conditions.js';
 
 $(document).ready(function() {
 
-  let conditionResults = new Conditions();
-  let promiseCondition = conditionResults.searchConditions();
-
-  promiseCondition.then(function(response){
-    let bodyCondition = JSON.parse(response);
-
-    var conditionsArr = []
-    var j = 0;
-    let x = [];
-    var conditionHTML = []
-
-    for(j in bodyCondition.data) {
-      x = bodyCondition.data[j].name;
-      // console.log(x);
-      conditionHTML.push('<option id="'+ j + '">'+ x + '</option>');
-    }
-    $('#condition').html(conditionHTML);
-  }, function(error){
-    $('.showErrorsCondition').text(`There was an error processing your request: ${error.message}`);
-  });
+  // let conditionResults = new Conditions();
+  // let promiseCondition = conditionResults.searchConditions();
+  //
+  // promiseCondition.then(function(response){
+  //   let bodyCondition = JSON.parse(response);
+  //
+  //   var conditionsArr = []
+  //   var j = 0;
+  //   let x = [];
+  //   var conditionHTML = []
+  //
+  //   for(j in bodyCondition.data) {
+  //     x = bodyCondition.data[j].name;
+  //     // console.log(x);
+  //     conditionHTML.push('<option id="'+ j + '">'+ x + '</option>');
+  //   }
+  //   $('#condition').html(conditionHTML);
+  // }, function(error){
+  //   $('.showErrorsCondition').text(`There was an error processing your request: ${error.message}`);
+  // });
 
   $('.findDoctors').submit(function(event){
     event.preventDefault();
@@ -55,7 +55,7 @@ $(document).ready(function() {
      var profileHTML = [];
      var imageHTML = [];
      let website = [];
-     // var websiteHTML = [];
+     var websiteHTML = [];
 
 
      /// ADDRESS ///
@@ -76,7 +76,7 @@ $(document).ready(function() {
        phoneNumber =body.data[i].practices[0].phones[0].number;
        // insurances = body.data[i].insurances[0].insurance_plan.name;
        website = body.data[i].practices[0].website;
-       // console.log(website);
+       console.log(website);
 
 
 /// RESULT LIST AND DOCTOR'S PROFILE ///
@@ -109,12 +109,13 @@ $(document).ready(function() {
        var b = imageHTML[a];
        var c = addressHTML[a];
        var d = profileHTML[a];
-       // var e = websiteHTML[a];
+       var e = websiteHTML[a];
+       console.log(e);
 
        $("#doctor-profile").html(d);
        $("#doctor-address").html(c);
        $("#doctor-image").html(b);
-       // $("#doctor-website").html(e);
+       $("#doctor-website").html(e);
      }
 
     }, function(error){
