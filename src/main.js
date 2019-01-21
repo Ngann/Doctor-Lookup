@@ -29,14 +29,34 @@ $(document).ready(function() {
           x = body.data[i].profile.first_name;
           y = body.data[i].profile.last_name;
           z = body.data[i].insurances[0].insurance_plan.name;
-          nameHTML.push('<h4>'+ x + " " + y +'</h4>'+ '<br>' + '<p>' + z + '</p>');
+          nameHTML.push('<li id="'+ x + '">'+ x + " " + y +'</li>');
+          // nameHTML.push('<h4>'+ x + " " + y +'</h4>'+ '<br>' + '<p>' + z + '</p>');
         }
-      $(".result").html(nameHTML.join(""));
+      // $(".doctor-list").html(nameHTML.join(""));
+      $("#doctor-list").html(nameHTML.join(""));
+
+      var lis = document.getElementById("doctor-list").getElementsByTagName('li');
+      for (var a = 0; a < lis.length; a++){
+        lis[a].addEventListener('click', doStuff, false);
+      }
+
+      function doStuff(){
+        var a = this.innerHTML
+        $("#doctor-profile").text(this.innerHTML);
+      }
 
     }, function(error){
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
-  })
+  });
+
+  // document.getElementById("doctor-list").addEventListener("click",function(e) {
+  //   // e.target is our targetted element.
+  //   //   console.log(e.target.nodeName)
+  //   // if(e.target && e.target.nodeName == "LI") {
+  //     alert(e.target.innerHTML);
+  //   // }
+  // });
 
   // var lon = 37.773;
   // var lat = -122.413;
