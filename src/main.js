@@ -10,19 +10,21 @@ $(document).ready(function() {
     event.preventDefault();
     var symptom = $('#condition').val();
     $('#condition').val("");
-    // let providerInput = $('#provider').val();
-    // $('#provider').val("");
+    var firstName = $('#first-name').val();
+    $('#first-name').val("");
+    var lastName = $('#last_name').val();
+    $('#last_name').val("");
     console.log(symptom);
 
     var lon = 45.54;
     var lat = -122.93;
     let doctorResults = new Search();
-    let promiseDoctor = doctorResults.searchDoctors(lon,lat, symptom);
+    let promiseDoctor = doctorResults.searchDoctors(lon,lat, symptom, firstName, lastName);
 
     promiseDoctor.then(function(response){
      let body = JSON.parse(response);
      let noresult = body.data;
-     
+
      if (noresult.length == 0){
         $("#no-result").text("No results base on search");
      } else {
@@ -103,6 +105,6 @@ $(document).ready(function() {
     }, function(error){
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
+    promiseDoctor.clear();
   });
-
 });
