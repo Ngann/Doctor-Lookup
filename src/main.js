@@ -21,6 +21,13 @@ $(document).ready(function() {
 
     promiseDoctor.then(function(response){
      let body = JSON.parse(response);
+     let noresult = body.data;
+     
+     if (noresult.length == 0){
+        $("#no-result").text("No results base on search");
+     } else {
+
+
 
   /// RESULT LIST AND DOCTOR'S PROFILE ///
      let firstName = [];
@@ -51,9 +58,8 @@ $(document).ready(function() {
        bio = body.data[i].profile.bio;
        image = body.data[i].profile.image_url;
        phoneNumber =body.data[i].practices[0].phones[0].number;
-       // insurances = body.data[i].insurances[0].insurance_plan.name;
        website = body.data[i].practices[0].website;
-       console.log(website);
+       // console.log(website);
 
 
 /// RESULT LIST AND DOCTOR'S PROFILE ///
@@ -78,23 +84,22 @@ $(document).ready(function() {
 
      var lis = document.getElementById("doctor-list").getElementsByTagName('li');
      for (var a = 0; a < lis.length; a++){
-       lis[a].addEventListener('click', doStuff, false);
+       lis[a].addEventListener('click', createHTML, false);
      }
 
-     function doStuff(){
+     function createHTML(){
        var a = this.id;
        var b = imageHTML[a];
        var c = addressHTML[a];
        var d = profileHTML[a];
        var e = websiteHTML[a];
-       console.log(e);
 
        $("#doctor-profile").html(d);
        $("#doctor-address").html(c);
        $("#doctor-image").html(b);
        $("#doctor-website").html(e);
      }
-
+}
     }, function(error){
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
     });
