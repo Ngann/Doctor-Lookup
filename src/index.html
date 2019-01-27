@@ -10,20 +10,28 @@
 <body>
   <div class="container">
     <div class="search">
-      <form class="form-horizontal findDoctors">
+      <legend>Search for Doctors in Your Area</legend>
+      <form class="form-horizontal findByCondition">
         <fieldset>
-          <!-- Form Name -->
-          <legend>Search for Doctors in Your Area</legend>
-
-          <!-- Text input-->
           <div class="form-group">
+            <legend>Search by Condition</legend>
             <label class="col-md-4 control-label" for="condition">Enter Condition</label>
             <div class="col-md-4">
               <input id="condition" name="symptom" type="text" placeholder="Enter a symptom" class="form-control input-md">
-
             </div>
           </div>
-
+          <div class="form-group find-condition">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-4">
+              <button id="submit" name="submit" class="btn btn-primary">Search</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <form class="form-horizontal findDoctors">
+        <fieldset>
+          <!-- Text input-->
+          <legend>Search by Doctor's name</legend>
           <div class="form-group">
             <label class="col-md-4 control-label" for="first-name">First Name</label>
             <div class="col-md-4">
@@ -36,15 +44,15 @@
               <input id="last-name" name="last-name" type="text" placeholder="Enter Last Name" class="form-control input-md">
             </div>
           </div>
-    <!-- Button -->
-        <div class="form-group find-doctors">
-          <label class="col-md-4 control-label" for="submit"></label>
-          <div class="col-md-4">
-            <button id="submit" name="submit" class="btn btn-primary">Search</button>
+          <!-- Button -->
+          <div class="form-group find-doctors">
+            <label class="col-md-4 control-label" for="submit"></label>
+            <div class="col-md-4">
+              <button id="submit" name="submit" class="btn btn-primary">Search</button>
+            </div>
           </div>
-        </div>
-      </fieldset>
-    </form>
+        </fieldset>
+      </form>
     </div>
 
     <div class="result">
