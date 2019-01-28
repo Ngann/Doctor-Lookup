@@ -1,7 +1,7 @@
 export class Search {
   searchDoctors(lon, lat ,firstName, lastName) {
     return new Promise(function(resolve,reject){
-      let key = process.env.API_KEY;
+      let apiKey = process.env.API_KEY;
       let request = new XMLHttpRequest();
       // let location="37.773,-122.413"
 

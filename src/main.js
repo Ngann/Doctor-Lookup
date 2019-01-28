@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Search } from './../src/doctors.js';
 import { Conditions } from './../src/condition.js';
-// import { createHTML } from './../src/result.js';
+// import { results } from './../src/result.js';
 // import { List } from './../src/variables.js';
 
 $(document).ready(function() {
@@ -76,7 +76,7 @@ $(document).ready(function() {
        addressHTML.push('<p>'+ street + '<br>' + city + " " + state + " " + zip + '<br>' + "Phone number: "+phoneNumber +'</p>')
 
      }
-
+     $("#show-result").text("Click on name to see info:");
      $("#doctor-list").html(nameHTML);
 
      var lis = document.getElementById("doctor-list").getElementsByTagName('li');
@@ -86,16 +86,16 @@ $(document).ready(function() {
 
      function createHTML(){
 
-       var a = this.id;
-       var b = imageHTML[a];
-       var c = addressHTML[a];
-       var d = profileHTML[a];
-       var e = websiteHTML[a];
+       var doctorId = this.id;
+       var doctorImage = imageHTML[doctorId];
+       var doctorAdresss = addressHTML[doctorId];
+       var doctorProfile = profileHTML[doctorId];
+       var doctorWebsite = websiteHTML[doctorId];
 
-       $("#doctor-profile").html(d);
-       $("#doctor-address").html(c);
-       $("#doctor-image").html(b);
-       $("#doctor-website").html(e);
+       $("#doctor-profile").html(doctorProfile);
+       $("#doctor-address").html(doctorAdresss);
+       $("#doctor-image").html(doctorImage);
+       $("#doctor-website").html(doctorWebsite);
      }
 }
 }, function(error){
@@ -174,7 +174,7 @@ $(document).ready(function() {
        addressHTML.push('<p>'+ street + '<br>' + city + " " + state + " " + zip + '<br>' + "Phone number: "+phoneNumber +'</p>')
 
      }
-
+     $("#show-result").text("Click on name to see info:");
      $("#doctor-list").html(nameHTML);
 
      var lis = document.getElementById("doctor-list").getElementsByTagName('li');
@@ -184,16 +184,16 @@ $(document).ready(function() {
 
      function createHTML(){
 
-       var a = this.id;
-       var b = imageHTML[a];
-       var c = addressHTML[a];
-       var d = profileHTML[a];
-       var e = websiteHTML[a];
+       var doctorId = this.id;
+       var doctorImage = imageHTML[doctorId];
+       var doctorAdresss = addressHTML[doctorId];
+       var doctorProfile = profileHTML[doctorId];
+       var doctorWebsite = websiteHTML[doctorId];
 
-       $("#doctor-profile").html(d);
-       $("#doctor-address").html(c);
-       $("#doctor-image").html(b);
-       $("#doctor-website").html(e);
+       $("#doctor-profile").html(doctorProfile);
+       $("#doctor-address").html(doctorAdresss);
+       $("#doctor-image").html(doctorImage);
+       $("#doctor-website").html(doctorWebsite);
      }
 }
 }, function(error){
