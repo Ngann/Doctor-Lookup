@@ -25,13 +25,15 @@ $ npm install
 ```
 $ npm run build
 ```
-4. To run the program:
+4. To create API Key:
+```
+Duplicate the .env.sample file and name it .env
+Replace with your API key where it says ENTER YOUR API KEY HERE!
+Delete .env.sample file
+```
+6.  To run the program:
 ```
 $ npm start
-```
-6. To test the code:
-```
-$ npm test
 ```
 
 ## Technology
