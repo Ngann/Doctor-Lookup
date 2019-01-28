@@ -65,7 +65,7 @@ $(document).ready(function() {
        profileHTML.push('<h4>'+ firstName + " " + lastName + " " + title + '</h4>'+ '<br>' + '<p>' + bio + '</p>'+ '<br>');
 
        imageHTML.push('<img src="' + image + '" >');
-       websiteHTML.push('<a href="' + website + '">'+ website +'</a>');
+       websiteHTML.push('<a href="' + website + '">'+ "website: "+ website +'</a>');
 
   // / ADDRESS ///
        street =body.data[i].practices[0].visit_address.street;
@@ -163,7 +163,7 @@ $(document).ready(function() {
        profileHTML.push('<h4>'+ firstName + " " + lastName + " " + title + '</h4>'+ '<br>' + '<p>' + bio + '</p>'+ '<br>');
 
        imageHTML.push('<img src="' + image + '" >');
-       websiteHTML.push('<a href="' + website + '">'+ website +'</a>');
+       websiteHTML.push('<a href="' + website + '">'+ "website: "+ website +'</a>');
 
   // / ADDRESS ///
        street =body.data[i].practices[0].visit_address.street;
