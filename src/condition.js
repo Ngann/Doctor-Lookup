@@ -1,5 +1,5 @@
 export class Conditions {
-  searchDoctors(lon, lat , symptom, firstName, lastName) {
+  searchCondition(lon, lat , symptom) {
     return new Promise(function(resolve,reject){
       let key = process.env.API_KEY;
       let request = new XMLHttpRequest();

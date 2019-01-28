@@ -1,5 +1,5 @@
 export class Search {
-  searchDoctors(lon, lat , symptom, firstName, lastName) {
+  searchDoctors(lon, lat ,firstName, lastName) {
     return new Promise(function(resolve,reject){
       let key = process.env.API_KEY;
       let request = new XMLHttpRequest();
