@@ -3,7 +3,7 @@
 
 ## Description
 
-_This is as application which allow user to search for doctors in Portland._
+_The Doctor Lookup app allows user to search for doctors base on conditions or by name._
 
 
 # ![demo](src/demo.png)
