@@ -3,7 +3,7 @@
 
 ## Description
 
-_The Doctor Lookup app allows user to search for doctors base on conditions or by name._
+_The Doctor Lookup app allow users to search for doctors base on conditions or by name._
 
 
 # ![demo](src/demo.png)
