@@ -8,14 +8,24 @@ body {
   background-color: white;
 }
 
-#doctor-profile {
-
-}
-
-#doctor-img {
-
-}
-
 li {
   list-style-type: none;
+}
+
+.search {
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+}
+
+.row{
+  border: 1px grey;
+  background: lightyellow;
+}
+
+#doctor-image {
+  width: 300px;
+  height: 300px;
 }
